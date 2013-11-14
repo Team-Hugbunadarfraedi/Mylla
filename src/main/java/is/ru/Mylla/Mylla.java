@@ -45,7 +45,13 @@ public class Mylla {
 	
 	//Tic box number x
 	public void ticBox(int x) {
-		board[x] = 1;
+		if(player1Turn) {
+			board[x] = 1;
+		}
+		else {
+			board[x] = 2;
+		}
+		player1Turn = !player1Turn;
 	}
 
 	/**
