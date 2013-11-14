@@ -36,7 +36,7 @@ public class Mylla {
 	}
 	
 	//Tic box number x
-	public void move(int x)
+	public void ticBox(int x)
 	{
 		
 	}
