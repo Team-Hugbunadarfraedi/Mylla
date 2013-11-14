@@ -45,12 +45,12 @@ public class Mylla {
 	
 	//Tic box number x
 	public void ticBox(int x) {
-		
+
 	}
 
 	public int getCellValue(int x) {
-		
-		return 0;
+
+		return board[x];
 	}
 
     public static void main(String[] args) {
