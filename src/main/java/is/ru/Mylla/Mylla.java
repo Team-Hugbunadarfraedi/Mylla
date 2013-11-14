@@ -25,11 +25,28 @@ public class Mylla {
 	//Is it legal to tic box number x?
 	public boolean legalMove(int x)
 	{
-		return true;
+		if((x < 0) || (x > 8))
+		{
+			return false;
+		}
+
+		if(isFinished)
+		{
+			return false;
+		}
+
+		if(board[x] == 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	//Tic box number x
-	public void move(int x)
+	public void ticBox(int x)
 	{
 		
 	}
