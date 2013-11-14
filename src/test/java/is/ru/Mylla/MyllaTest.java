@@ -61,5 +61,13 @@ public class MyllaTest
 		m.board[7] = 1;
 		assertEquals(1, m.getCellValue(7));
 	}
+
+	@Test
+	public void testGetCellValuePlayerO() {
+		Mylla m = new Mylla();
+
+		m.board[3] = 2;
+		assertEquals(2, m.getCellValue(3));
+	}
 	
 }
