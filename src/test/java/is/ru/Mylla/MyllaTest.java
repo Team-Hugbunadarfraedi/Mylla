@@ -12,7 +12,7 @@ public class MyllaTest
 	}
 	
 	@Test
-	public void LegalMoveTest_Illegal() {
+	public void testLegalMoveIllegal() {
 		Mylla m = new Mylla();
 
 		//Illegal inputs
@@ -21,7 +21,7 @@ public class MyllaTest
 	}
 
 	@Test
-	public void LegalMoveTest_Empty() {
+	public void testLegalMoveEmpty() {
 		Mylla m = new Mylla();
 
 		//Tests an empty board
@@ -30,7 +30,7 @@ public class MyllaTest
 	}
 
 	@Test
-	public void LegalMoveTest_NotEmpty() {
+	public void testLegalMoveNotEmpty() {
 		Mylla m = new Mylla();
 
 		m.ticBox(0);
