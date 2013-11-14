@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## Use this script to prepare GreenQloud Untuntu 12.04 server to run Selenium tests in Xvfb
+## Use this script to prepare GreenQloud Ubuntu 12.04 server to run Selenium tests in Xvfb
 
 # Get Xvfb and Firefox
 sudo apt-get install -y xvfb firefox
