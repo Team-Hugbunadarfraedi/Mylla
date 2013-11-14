@@ -6,6 +6,7 @@ import org.junit.Test;
 
 
 public class Mylla2Test{
+    /*
 
 	Mylla mylla = new Mylla();
 
@@ -27,5 +28,6 @@ public class Mylla2Test{
         mylla.board[7] = 2;
 
         assertEquals(true, mylla.checkForWin());
-    }
+    
+    }*/
 }

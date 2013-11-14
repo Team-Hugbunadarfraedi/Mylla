@@ -6,9 +6,25 @@ import org.junit.Test;
 public class MyllaTest
 {
 	@Test
-	public void CheckForWinTest()
-	{
-		
+	public void testCheckForWinTest() {
+		Mylla m = new Mylla();
+
+		m.ticBox(0);
+        m.ticBox(1);
+
+		assertEquals(false, m.checkForWin());
+
+        m.ticBox(2);
+        m.ticBox(8);
+        m.ticBox(3);
+        m.ticBox(4);
+        m.ticBox(5);
+
+        assertEquals(false, m.checkForWin());
+
+        m.ticBox(7);
+
+        assertEquals(true, m.checkForWin());
 	}
 	
 	@Test
@@ -56,7 +72,7 @@ public class MyllaTest
 	public void testGetCellValuePlayerX() {
 		Mylla m = new Mylla();
 
-		m.board[7] = 1;
+		m.ticBox(7);
 		assertEquals(1, m.getCellValue(7));
 	}
 
@@ -64,7 +80,8 @@ public class MyllaTest
 	public void testGetCellValuePlayerO() {
 		Mylla m = new Mylla();
 
-		m.board[3] = 2;
+		m.ticBox(2);
+		m.ticBox(3);
 		assertEquals(2, m.getCellValue(3));
 	}
 	

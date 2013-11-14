@@ -2,9 +2,9 @@ package is.ru.Mylla;
 
 
 public class Mylla {
-	int board[] = new int[9]; //Represents the board
-	boolean player1Turn = true; //Is it player 1's turn?
-	boolean isFinished = false; //Is the game finished?
+	private int board[] = new int[9]; //Represents the board
+	private boolean player1Turn = true; //Is it player 1's turn?
+	private boolean isFinished = false; //Is the game finished?
 	
 	//Has some one won?
 	public boolean checkForWin() {
