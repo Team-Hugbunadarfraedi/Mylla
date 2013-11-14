@@ -12,8 +12,7 @@ public class MyllaTest
 	}
 	
 	@Test
-	public void LegalMoveTest_Illegal()
-	{
+	public void LegalMoveTest_Illegal() {
 		Mylla m = new Mylla();
 
 		//Illegal inputs
@@ -22,8 +21,7 @@ public class MyllaTest
 	}
 
 	@Test
-	public void LegalMoveTest_Empty()
-	{
+	public void LegalMoveTest_Empty() {
 		Mylla m = new Mylla();
 
 		//Tests an empty board
@@ -32,8 +30,7 @@ public class MyllaTest
 	}
 
 	@Test
-	public void LegalMoveTest_NotEmpty()
-	{
+	public void LegalMoveTest_NotEmpty() {
 		Mylla m = new Mylla();
 
 		//To be replaced by move
@@ -51,9 +48,12 @@ public class MyllaTest
 	}
 	
 	@Test
-	public void MoveTest()
-	{
-	
+	public void testGetCellValueEmptyCell() {
+		Mylla m = new Mylla();
+
+		assertEquals(0, m.getCellValue(0));
 	}
+
+
 	
 }

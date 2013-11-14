@@ -7,8 +7,7 @@ public class Mylla {
 	boolean isFinished = false; //Is the game finished?
 	
 	//Has some one won?
-	public boolean checkForWin()
-	{
+	public boolean checkForWin() {
 		if((board[0] != 0 && board[0] == board[1] && board[0] == board[2]) ||
 			(board[3] != 0 && board[3] == board[4] && board[3] == board[5]) ||
 			(board[6] != 0 && board[6] == board[7] && board[8] == board[6]) ||
@@ -23,8 +22,7 @@ public class Mylla {
 	}
 	
 	//Is it legal to tic box number x?
-	public boolean legalMove(int x)
-	{
+	public boolean legalMove(int x) {
 		if((x < 0) || (x > 8))
 		{
 			return false;
@@ -46,9 +44,13 @@ public class Mylla {
 	}
 	
 	//Tic box number x
-	public void ticBox(int x)
-	{
+	public void ticBox(int x) {
 		
+	}
+
+	public int getCellValue(int x) {
+		
+		return 0;
 	}
 
     public static void main(String[] args) {
