@@ -45,7 +45,7 @@ public class Mylla {
 	
 	//Tic box number x
 	public void ticBox(int x) {
-
+		board[x] = 1;
 	}
 
 	/**
