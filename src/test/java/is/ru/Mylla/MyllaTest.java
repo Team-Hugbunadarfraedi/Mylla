@@ -1,7 +1,7 @@
 package is.ru.Mylla;
 
 import static org.junit.Assert.assertEquals;
-import junit.test;
+import org.junit.Test;
 
 public class MyllaTest
 {
@@ -9,6 +9,18 @@ public class MyllaTest
 	public void CheckForWinTest()
 	{
 		
+	}
+	
+	@Test
+	public void LegalMoveTest()
+	{
+	
+	}
+	
+	@Test
+	public void MoveTest()
+	{
+	
 	}
 	
 }
