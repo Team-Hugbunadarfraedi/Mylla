@@ -88,4 +88,18 @@ public class MyllaTest
 		assertEquals(2, m.getCellValue(5));
 
 	}
+
+	@Test
+	public void testTicBoxThreeTics() {
+		Mylla m = new Mylla();
+
+		m.ticBox(0);
+		m.ticBox(1);
+		m.ticBox(2);
+		assertEquals(1, m.getCellValue(0));
+		assertEquals(2, m.getCellValue(1));
+		assertEquals(1, m.getCellValue(2));
+	}
+
+
 }
