@@ -17,23 +17,23 @@ public class MyllaTest
 		Mylla m = new Mylla();
 
 		//Illegal inputs
-		assertEquals(m.LegalMove(-1), false);
-		assertEquals(m.LegalMove(9), false);
+		assertEquals(m.legalMove(-1), false);
+		assertEquals(m.legalMove(9), false);
 
 		//Tests an empty board
-		assertEquals(m.LegalMove(0), true);
-		assertEquals(m.LegalMove(1), true);
+		assertEquals(m.legalMove(0), true);
+		assertEquals(m.legalMove(1), true);
 
 		//To be replaced by move
 		m.board[0] = 1;
-		assertEquals(m.LegalMove(0), false);
-		assertEquals(m.LegalMove(1), true);
+		assertEquals(m.legalMove(0), false);
+		assertEquals(m.legalMove(1), true);
 
 		//To be replaced by move
 		m.board[1] = 2;
-		assertEquals(m.LegalMove(1), false);
-		assertEquals(m.LegalMove(2), true);
-		assertEquals(m.LegalMove(0), false);
+		assertEquals(m.legalMove(1), false);
+		assertEquals(m.legalMove(2), true);
+		assertEquals(m.legalMove(0), false);
 
 
 	}
