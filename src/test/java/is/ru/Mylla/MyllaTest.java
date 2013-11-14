@@ -16,8 +16,8 @@ public class MyllaTest
 		Mylla m = new Mylla();
 
 		//Illegal inputs
-		assertEquals(m.legalMove(-1), false);
-		assertEquals(m.legalMove(9), false);
+		assertEquals(false, m.legalMove(-1));
+		assertEquals(false, m.legalMove(9));
 	}
 
 	@Test
@@ -25,24 +25,22 @@ public class MyllaTest
 		Mylla m = new Mylla();
 
 		//Tests an empty board
-		assertEquals(m.legalMove(0), true);
-		assertEquals(m.legalMove(1), true);
+		assertEquals(true, m.legalMove(0));
+		assertEquals(true, m.legalMove(1));
 	}
 
 	@Test
 	public void LegalMoveTest_NotEmpty() {
 		Mylla m = new Mylla();
 
-		//To be replaced by move
-		m.board[0] = 1;
-		assertEquals(m.legalMove(0), false);
-		assertEquals(m.legalMove(1), true);
+		m.ticBox(0);
+		assertEquals(false, m.legalMove(0));
+		assertEquals(true, m.legalMove(1));
 
-		//To be replaced by move
-		m.board[1] = 2;
-		assertEquals(m.legalMove(1), false);
-		assertEquals(m.legalMove(2), true);
-		assertEquals(m.legalMove(0), false);
+		m.ticBox(1);
+		assertEquals(false, m.legalMove(1));
+		assertEquals(true, m.legalMove(2));
+		assertEquals(false, m.legalMove(0));
 
 
 	}
