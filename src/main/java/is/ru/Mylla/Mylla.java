@@ -48,6 +48,9 @@ public class Mylla {
 
 	}
 
+	/**
+	Method to allow client programs to get value of cells on the board
+	*/
 	public int getCellValue(int x) {
 
 		return board[x];
