@@ -1,0 +1,9 @@
+Mylla
+''''''''''''''''''''''''
+int[] board; //0 is empty, 1 is x, 2 is o
+bool playerTurn; //Is it player 1's turn?
+bool isFinished; //Is the game over?
+
+bool checkForWin(); //Has someone won?
+bool legalMove(int); //Is it legal to tic this box?
+void move(int); //The player makes a move
