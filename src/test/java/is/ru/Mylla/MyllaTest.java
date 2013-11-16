@@ -123,6 +123,6 @@ public class MyllaTest
 		for(int i = 0; i < 10; i++){
 			m.ticBox(i);
 		}
-		assertEquals(8; m.getCountMoves());
+		assertEquals(9, m.getCountMoves());
 	}
 }

@@ -5,6 +5,7 @@ public class Mylla {
 	private int board[] = new int[9]; //Represents the board
 	private boolean player1Turn = true; //Is it player 1's turn?
 	private boolean isFinished = false; //Is the game finished?
+	private int countMoves = 0;
 	
 	//Has some one won?
 	public boolean checkForWin() {
@@ -23,6 +24,10 @@ public class Mylla {
 	
 	//Is it legal to tic box number x?
 	public boolean legalMove(int x) {
+		if(countMoves == 9)
+		{
+			return false;
+		}
 		if((x < 0) || (x > 8))
 		{
 			return false;
@@ -45,13 +50,16 @@ public class Mylla {
 	
 	//Tic box number x
 	public void ticBox(int x) {
-		if(player1Turn) {
-			board[x] = 1;
+		if(legalMove(x)){
+			if(player1Turn) {
+				board[x] = 1;
+			}
+			else {
+				board[x] = 2;
+			}
+			player1Turn = !player1Turn;
+			countMoves++;
 		}
-		else {
-			board[x] = 2;
-		}
-		player1Turn = !player1Turn;
 	}
 
 	/**
@@ -60,6 +68,10 @@ public class Mylla {
 	public int getCellValue(int x) {
 
 		return board[x];
+	}
+
+	public int getCountMoves(){
+		return countMoves;
 	}
 
     public static void main(String[] args) {
