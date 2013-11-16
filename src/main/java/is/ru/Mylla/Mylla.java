@@ -21,6 +21,43 @@ public class Mylla {
 		return false;
 	}
 	
+	
+	//resets the game when finished
+	public void reset_game(){
+	
+	setPlayer1Turn(true);
+
+	setIsFinished(false);
+
+	resetBoard();
+	}
+
+
+	public void setPlayer1Turn(boolean input)
+	{player1Turn = input;}
+
+	public void setIsFinished(boolean input) 
+        {isFinished = input;}
+
+	public void resetBoard(){
+	board = new int[9];}
+
+	public boolean getIsFinished(){
+	return isFinished;}
+
+	public boolean getPlayer1Turn(){
+	return player1Turn;}
+
+	public int getBoardByIndex(int index){
+	return board[index];}	
+
+
+
+
+
+
+
+
 	//Is it legal to tic box number x?
 	public boolean legalMove(int x) {
 		if((x < 0) || (x > 8))

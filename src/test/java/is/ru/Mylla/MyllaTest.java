@@ -5,6 +5,28 @@ import org.junit.Test;
 
 public class MyllaTest
 {
+
+
+	@Test
+	public void reset_game() {
+
+	Mylla m = new Mylla();
+	
+	m.reset_game();
+	assertEquals(false, m.getIsFinished());
+	assertEquals(true, m.getPlayer1Turn());
+	assertEquals(0, m.getBoardByIndex(0));
+	assertEquals(0, m.getBoardByIndex(5));
+	assertEquals(0, m.getBoardByIndex(8));
+	}
+
+
+
+
+
+
+
+
 	@Test
 	public void testCheckForWinTest() {
 		Mylla m = new Mylla();
