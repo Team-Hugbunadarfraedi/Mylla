@@ -106,7 +106,7 @@ public class Mylla {
 	}
 
     public static void main(String[] args) {
-    	Mylla mylla = new Mylla()
+    	final Mylla mylla = new Mylla();
 
         staticFileLocation("/public");
         
@@ -117,14 +117,14 @@ public class Mylla {
             public Object handle(Request request, Response response) {
             	int temp = Integer.valueOf(request.queryParams("ClickedBox"));
             	
-            	if(!legalMove(temp)){
+            	if(!mylla.legalMove(temp)){
             		return 0;
             	}
 				else{
 					mylla.ticBox(temp); 
-					if(checkForWin)
+					if(mylla.checkForWin())
 					{
-						if(!player1Turn)
+						if(!mylla.player1Turn)
 						{
 							return 3;
 						}
@@ -133,9 +133,9 @@ public class Mylla {
 							return 4;
 						}
 					}
-					if(isFinished)
+					if(mylla.isFinished)
 					{
-						if(!player1Turn)
+						if(!mylla.player1Turn)
 						{
 							return 5;
 						}
@@ -146,7 +146,7 @@ public class Mylla {
 					}
 					else
 					{
-						if(!player1Turn)
+						if(!mylla.player1Turn)
 						{
 							return 1;
 						}
