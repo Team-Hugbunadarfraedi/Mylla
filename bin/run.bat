@@ -5,4 +5,4 @@ rem source files. The webapp will run on default spark port (4567)
 rem ***********************************************************************
 
 set PORT=4567
-java -jar target\helloworld-1.0-SNAPSHOT-jar-with-dependencies.jar
+java -jar target\Mylla-1.0-SNAPSHOT-jar-with-dependencies.jar
