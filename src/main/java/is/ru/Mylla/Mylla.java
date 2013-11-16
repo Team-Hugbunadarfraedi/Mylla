@@ -1,5 +1,8 @@
 package is.ru.Mylla;
 
+import static spark.Spark.*;
+import spark.*;
+
 
 public class Mylla {
 	private int board[] = new int[9]; //Represents the board
@@ -54,17 +57,8 @@ public class Mylla {
 
 
 
-
-
-
-
-
 	//Is it legal to tic box number x?
 	public boolean legalMove(int x) {
-		if(countMoves == 9)
-		{
-			return false;
-		}
 		if((x < 0) || (x > 8))
 		{
 			return false;
@@ -112,7 +106,58 @@ public class Mylla {
 	}
 
     public static void main(String[] args) {
-		
+    	Mylla mylla = new Mylla()
+
+        staticFileLocation("/public");
+        
+        setPort(Integer.valueOf(System.getenv("PORT")));
+
+        post(new Route("/add") {
+            @Override
+            public Object handle(Request request, Response response) {
+            	int temp = Integer.valueOf(request.queryParams("ClickedBox"));
+            	
+            	if(!legalMove(temp)){
+            		return 0;
+            	}
+				else{
+					mylla.ticBox(temp); 
+					if(checkForWin)
+					{
+						if(!player1Turn)
+						{
+							return 3;
+						}
+						else
+						{
+							return 4;
+						}
+					}
+					if(isFinished)
+					{
+						if(!player1Turn)
+						{
+							return 5;
+						}
+						else
+						{
+							return 6;
+						}
+					}
+					else
+					{
+						if(!player1Turn)
+						{
+							return 1;
+						}
+						else
+						{
+							return 2;
+						}
+					}
+				}				
+            }
+        });
     }
 }
 
