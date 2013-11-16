@@ -5,9 +5,10 @@ import org.junit.Test;
 
 public class MyllaTest
 {
-	Mylla m = new Mylla();
 	@Test
 	public void testCheckForWinTest() {
+		Mylla m = new Mylla();
+
 		m.ticBox(0);
         m.ticBox(1);
 
@@ -28,6 +29,8 @@ public class MyllaTest
 	
 	@Test
 	public void testLegalMoveIllegal() {
+		Mylla m = new Mylla();
+
 		//Illegal inputs
 		assertEquals(false, m.legalMove(-1));
 		assertEquals(false, m.legalMove(9));
@@ -35,6 +38,8 @@ public class MyllaTest
 
 	@Test
 	public void testLegalMoveEmpty() {
+		Mylla m = new Mylla();
+
 		//Tests an empty board
 		assertEquals(true, m.legalMove(0));
 		assertEquals(true, m.legalMove(1));
@@ -42,6 +47,8 @@ public class MyllaTest
 
 	@Test
 	public void testLegalMoveNotEmpty() {
+		Mylla m = new Mylla();
+
 		m.ticBox(0);
 		assertEquals(false, m.legalMove(0));
 		assertEquals(true, m.legalMove(1));
@@ -56,17 +63,23 @@ public class MyllaTest
 	
 	@Test
 	public void testGetCellValueEmptyCell() {
+		Mylla m = new Mylla();
+
 		assertEquals(0, m.getCellValue(0));
 	}
 
 	@Test
 	public void testGetCellValuePlayerX() {
+		Mylla m = new Mylla();
+
 		m.ticBox(7);
 		assertEquals(1, m.getCellValue(7));
 	}
 
 	@Test
 	public void testGetCellValuePlayerO() {
+		Mylla m = new Mylla();
+
 		m.ticBox(2);
 		m.ticBox(3);
 		assertEquals(2, m.getCellValue(3));
@@ -74,12 +87,16 @@ public class MyllaTest
 	
 	@Test
 	public void testTicBoxSingleTic() {
+		Mylla m = new Mylla();
+
 		m.ticBox(3);
 		assertEquals(1, m.getCellValue(3));
 	}
 
 	@Test
 	public void testTicBoxTwoTics() {
+		Mylla m = new Mylla();
+
 		m.ticBox(4);
 		m.ticBox(5);
 		assertEquals(1, m.getCellValue(4));
@@ -89,6 +106,8 @@ public class MyllaTest
 
 	@Test
 	public void testTicBoxThreeTics() {
+		Mylla m = new Mylla();
+
 		m.ticBox(0);
 		m.ticBox(1);
 		m.ticBox(2);
