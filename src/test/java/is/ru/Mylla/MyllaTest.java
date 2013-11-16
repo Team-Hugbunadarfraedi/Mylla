@@ -116,5 +116,13 @@ public class MyllaTest
 		assertEquals(1, m.getCellValue(2));
 	}
 
+	@Test
+	public void testCounter() {
+		Mylla m = new Mylla();
 
+		for(int i = 0; i < 10; i++){
+			m.ticBox(i);
+		}
+		m.g
+	}
 }
