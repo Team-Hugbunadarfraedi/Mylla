@@ -99,6 +99,7 @@
     <!-- Use JAVA 7 (OpenJDK or Oracle) -->
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+    <checkstyle.config.location>sun_checks.xml</checkstyle.config.location>
   </properties>
   <reporting>
     <plugins>
