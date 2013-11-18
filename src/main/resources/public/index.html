@@ -18,21 +18,23 @@
 		
 		<table>
 		<tr>
-			<td class = "Tic" name="box0" id="0">0</td>
-			<td class = "Tic" name="box1" id="1">1</td>
-			<td class = "Tic" name="box2" id="2">2</td>
+			<td class="Tic" name="box0" id="0">0</td>
+			<td class="Tic" name="box1" id="1">1</td>
+			<td class="Tic" name="box2" id="2">2</td>
 		</tr>
 		<tr>
-			<td class = "Tic" name="box3" id="3">3</td>
-			<td class = "Tic" name="box4" id="4">4</td>
-			<td class = "Tic" name="box5" id="5">5</td>
+			<td class="Tic" name="box3" id="3">3</td>
+			<td class="Tic" name="box4" id="4">4</td>
+			<td class="Tic" name="box5" id="5">5</td>
 		</tr>
 		<tr>
-			<td class = "Tic" name="box6" id="6">6</td>
-			<td class = "Tic" name="box7" id="7">7</td>
-			<td class = "Tic" name="box8" id="8">8</td>
+			<td class="Tic" name="box6" id="6">6</td>
+			<td class="Tic" name="box7" id="7">7</td>
+			<td class="Tic" name="box8" id="8">8</td>
 		</tr>
 		</table>
+		
+		<button id="ResetGame">Reset game</button>
 	  
 		<hr>
 		<div id="results">
@@ -99,6 +101,11 @@
 			$('#results').html('Something went very wrong').attr('class', 'alert alert-danger');
 		});
 		e.preventDefault();
+		});
+		
+		//Resets the game
+		$("#ResetGame").click(function() {
+			alert("The button has been clicked");
 		});
 	});
     </script>
