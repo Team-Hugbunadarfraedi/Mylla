@@ -51,7 +51,7 @@
 		box.click(function(e) {
 		$.ajax({
 			type: "post",
-			url: "/add",
+			url: "/processTurn",
 			data: 'ClickedBox=' + this.id
 		}).done(function(returnCode) {
 		/*

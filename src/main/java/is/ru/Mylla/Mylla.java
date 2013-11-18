@@ -130,7 +130,7 @@ public class Mylla {
 
 		setPort(Integer.valueOf(System.getenv("PORT")));
 
-		post(new Route("/add") {
+		post(new Route("/processTurn") {
 			@Override
 			public Object handle(Request request, Response response) {
 				int temp = Integer.valueOf(request.queryParams("ClickedBox"));
