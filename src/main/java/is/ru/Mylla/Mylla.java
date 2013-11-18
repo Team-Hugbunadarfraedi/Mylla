@@ -77,7 +77,8 @@ public class Mylla {
 	
 	
 	//Returns a returnCode for the javascript
-	public int getReturnCode(){
+	//and performs the necessary actions for the turn
+	public int processTurn(int clickedBox){
 		return -1;
 	}
 

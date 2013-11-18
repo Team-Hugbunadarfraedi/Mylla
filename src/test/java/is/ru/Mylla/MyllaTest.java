@@ -139,7 +139,7 @@ public class MyllaTest {
 	}
 	
 	@Test
-	public void testReturnCode(){
+	public void testProcessTurn(){
 		Mylla m = new Mylla();
 		
 		
