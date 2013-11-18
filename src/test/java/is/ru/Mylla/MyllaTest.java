@@ -188,6 +188,8 @@ public class MyllaTest {
 	@Test
 	public void testProcessTurnDraw()
 	{
+		Mylla m = new Mylla();
+	
 		assertEquals(1, m.processTurn(4));
 		assertEquals(2, m.processTurn(1));
 		
