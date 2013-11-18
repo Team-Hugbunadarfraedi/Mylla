@@ -19,7 +19,7 @@ public class MyllaTest {
 	}
 
 	@Test
-	public void testCheckForWinTest() {
+	public void testCheckForWin() {
 		Mylla m = new Mylla();
 
 		m.ticBox(0);
