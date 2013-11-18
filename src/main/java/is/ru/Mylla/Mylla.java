@@ -72,6 +72,9 @@ public class Mylla {
 			}
 			player.setPlayer1Turn(!player.getPlayer1Turn());
 			countMoves++;
+			if(getCountMoves() > 8){
+				setIsFinished(true);
+			}
 		}
 	}
 	
@@ -79,7 +82,32 @@ public class Mylla {
 	//Returns a returnCode for the javascript
 	//and performs the necessary actions for the turn
 	public int processTurn(int clickedBox){
-		return -1;
+		if (!legalMove(clickedBox)) {
+					return 0;
+				} else {
+					ticBox(clickedBox);
+					if (checkForWin()) {
+						setIsFinished(true);
+						if (!player.getPlayer1Turn()) {
+							return 3;
+						} else {
+							return 4;
+						}
+					}
+					if (isFinished) {
+						if (!player.getPlayer1Turn()) {
+							return 5;
+						} else {
+							return 6;
+						}
+					} else {
+						if (!player.getPlayer1Turn()) {
+							return 1;
+						} else {
+							return 2;
+						}
+					}
+				}
 	}
 
 	
@@ -106,32 +134,8 @@ public class Mylla {
 			@Override
 			public Object handle(Request request, Response response) {
 				int temp = Integer.valueOf(request.queryParams("ClickedBox"));
-
-				if (!mylla.legalMove(temp)) {
-					return 0;
-				} else {
-					mylla.ticBox(temp);
-					if (mylla.checkForWin()) {
-						if (!mylla.player.getPlayer1Turn()) {
-							return 3;
-						} else {
-							return 4;
-						}
-					}
-					if (mylla.isFinished) {
-						if (!mylla.player.getPlayer1Turn()) {
-							return 5;
-						} else {
-							return 6;
-						}
-					} else {
-						if (!mylla.player.getPlayer1Turn()) {
-							return 1;
-						} else {
-							return 2;
-						}
-					}
-				}
+				
+				return mylla.processTurn(temp);
 			}
 		});
 	}
