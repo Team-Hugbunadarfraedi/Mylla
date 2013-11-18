@@ -48,8 +48,8 @@
 		var box = $("table tr td");
 		box.click(function(e) {
 		$.ajax({
-			type: box.attr('method'),
-			url: box.attr('action'),
+			type: "post",
+			url: "/add",
 			data: 'ClickedBox=' + this.id
 		}).done(function(returnCode) {
 		/*
@@ -62,9 +62,9 @@
 		5: Player 1 tics the box with X and the game is a draw
 		6: Player 2 tics the box with O and the game is a draw
 		*/
+		//TODO: Add handling of the different return codes
 		
-		
-			$('#results').html(returnCode).attr('class', 'alert alert-success');
+			$('#results').html(returnCode + '').attr('class', 'alert alert-success');
 		}).fail(function() {
 			$('#results').html('Something went very wrong').attr('class', 'alert alert-danger');
 		});
