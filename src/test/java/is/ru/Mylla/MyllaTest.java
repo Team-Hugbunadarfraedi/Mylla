@@ -13,9 +13,9 @@ public class MyllaTest {
 		m.reset_game();
 		assertEquals(false, m.getIsFinished());
 		assertEquals(true, m.getPlayer1Turn());
-		assertEquals(0, m.getBoardByIndex(0));
-		assertEquals(0, m.getBoardByIndex(5));
-		assertEquals(0, m.getBoardByIndex(8));
+		assertEquals(0, m.gameboard.getBoardByIndex(0));
+		assertEquals(0, m.gameboard.getBoardByIndex(5));
+		assertEquals(0, m.gameboard.getBoardByIndex(8));
 	}
 
 	@Test
@@ -77,7 +77,7 @@ public class MyllaTest {
 	public void testGetCellValueEmptyCell() {
 		Mylla m = new Mylla();
 
-		assertEquals(0, m.getCellValue(0));
+		assertEquals(0, m.gameboard.getCellValue(0));
 	}
 
 	@Test
@@ -85,7 +85,7 @@ public class MyllaTest {
 		Mylla m = new Mylla();
 
 		m.ticBox(7);
-		assertEquals(1, m.getCellValue(7));
+		assertEquals(1, m.gameboard.getCellValue(7));
 	}
 
 	@Test
@@ -94,7 +94,7 @@ public class MyllaTest {
 
 		m.ticBox(2);
 		m.ticBox(3);
-		assertEquals(2, m.getCellValue(3));
+		assertEquals(2, m.gameboard.getCellValue(3));
 	}
 
 	@Test
@@ -102,7 +102,7 @@ public class MyllaTest {
 		Mylla m = new Mylla();
 
 		m.ticBox(3);
-		assertEquals(1, m.getCellValue(3));
+		assertEquals(1, m.gameboard.getCellValue(3));
 	}
 
 	@Test
@@ -111,8 +111,8 @@ public class MyllaTest {
 
 		m.ticBox(4);
 		m.ticBox(5);
-		assertEquals(1, m.getCellValue(4));
-		assertEquals(2, m.getCellValue(5));
+		assertEquals(1, m.gameboard.getCellValue(4));
+		assertEquals(2, m.gameboard.getCellValue(5));
 
 	}
 
@@ -123,9 +123,9 @@ public class MyllaTest {
 		m.ticBox(0);
 		m.ticBox(1);
 		m.ticBox(2);
-		assertEquals(1, m.getCellValue(0));
-		assertEquals(2, m.getCellValue(1));
-		assertEquals(1, m.getCellValue(2));
+		assertEquals(1, m.gameboard.getCellValue(0));
+		assertEquals(2, m.gameboard.getCellValue(1));
+		assertEquals(1, m.gamoeboard.getCellValue(2));
 	}
 
 	@Test
@@ -137,4 +137,5 @@ public class MyllaTest {
 		}
 		assertEquals(9, m.getCountMoves());
 	}
+
 }
