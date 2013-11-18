@@ -63,8 +63,38 @@
 		6: Player 2 tics the box with O and the game is a draw
 		*/
 		//TODO: Add handling of the different return codes
-		
-			$('#results').html(returnCode + '').attr('class', 'alert alert-success');
+			
+			if(returnCode != 0)
+			{
+				//TODO: Edit the post function to also return the clickedBox value
+				var clickedBox = 0;
+				alert(clickedBox);
+				alert(this.id);
+				//Player 1 tics the box with X
+				if((returnCode % 2) == 1)
+				{
+					$("#" + clickedBox).text("X");
+				}
+				//Player 2 tics the box with O
+				else
+				{
+					$("#" + clickedBox).text("O");
+				}
+				
+				if((returnCode == 3) || (returnCode == 4))
+				{
+					$("#results").html("Player " + (returnCode % 2) + " wins").attr('class', 'alert alert-success');
+				}
+				else if(returnCode > 4)
+				{
+					$("#results").html("The game is a draw").attr('class', 'alert alert-success');
+				}
+			}
+			
+			
+			
+			//For debugging purposes
+			$('#results').html("returnCode = " + returnCode).attr('class', 'alert alert-success');
 		}).fail(function() {
 			$('#results').html('Something went very wrong').attr('class', 'alert alert-danger');
 		});
