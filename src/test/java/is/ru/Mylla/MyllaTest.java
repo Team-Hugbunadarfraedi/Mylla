@@ -139,10 +139,69 @@ public class MyllaTest {
 	}
 	
 	@Test
-	public void testProcessTurn(){
+	public void testProcessTurnIllegal(){
 		Mylla m = new Mylla();
 		
+		assertEquals(0, m.processTurn(-1));
+		assertEquals(0, m.processTurn(9));
 		
+		assertEquals(1, m.processTurn(0));
+		assertEquals(0, m.processTurn(0));
+		
+		assertEquals(2, m.processTurn(1));
+		assertEquals(0, m.processTurn(1));
+		assertEquals(0, m.processTurn(0));
+		
+	}
+	
+	@Test
+	public void testProcessTurn1Win(){
+		Mylla m = new Mylla();
+		
+		assertEquals(1, m.processTurn(0));
+		assertEquals(2, m.processTurn(1));
+		
+		assertEquals(1, m.processTurn(3));
+		assertEquals(2, m.processTurn(4));
+		
+		assertEquals(3, m.processTurn(6));
+		assertEquals(0, m.processTurn(7));
+		
+	}
+	
+	@Test
+	public void testProcessTurn2Win(){
+		Mylla m = new Mylla();
+		
+		assertEquals(1, m.processTurn(0));
+		assertEquals(2, m.processTurn(2));
+		
+		assertEquals(1, m.processTurn(1));
+		assertEquals(2, m.processTurn(4));
+		
+		assertEquals(1, m.processTurn(3));
+		assertEquals(4, m.processTurn(6));
+		
+		assertEquals(0, m.processTurn(8));
+	}
+	
+	@Test
+	public void testProcessTurnDraw()
+	{
+		assertEquals(1, m.processTurn(4));
+		assertEquals(2, m.processTurn(1));
+		
+		assertEquals(1, m.processTurn(0));
+		assertEquals(2, m.processTurn(8));
+		
+		assertEquals(1, m.processTurn(5));
+		assertEquals(2, m.processTurn(3));
+		
+		assertEquals(1, m.processTurn(6));
+		assertEquals(2, m.processTurn(2));
+		
+		assertEquals(5, m.processTurn(7));
+		assertEquals(0, m.processTurn(0));
 	}
 
 }
