@@ -137,5 +137,12 @@ public class MyllaTest {
 		}
 		assertEquals(9, m.getCountMoves());
 	}
+	
+	@Test
+	public void testReturnCode(){
+		Mylla m = new Mylla();
+		
+		
+	}
 
 }

@@ -74,6 +74,12 @@ public class Mylla {
 			countMoves++;
 		}
 	}
+	
+	
+	//Returns a returnCode for the javascript
+	public int getReturnCode(){
+		return -1;
+	}
 
 	
 	public int getCountMoves() {
