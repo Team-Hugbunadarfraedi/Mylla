@@ -91,6 +91,18 @@
 				{
 					$("#results").html("The game is a draw").attr('class', 'alert alert-success');
 				}
+				
+				var playerTurn;
+				if((returnCode % 2) == 0)
+				{
+					playerTurn = 1;
+				}
+				else
+				{
+					playerTurn = 2;
+				}
+				
+				$("#Player").text("Player " + playerTurn + "'s turn");
 			}
 			
 			
