@@ -6,7 +6,7 @@ import spark.*;
 public class Mylla {
 	
 	private Board gameboard = new Board();
-	private boolean player1Turn = true; // Is it player 1's turn?
+	private Player player = new Player();
 	private boolean isFinished = false; // Is the game finished?
 	private int countMoves = 0;
 
@@ -28,31 +28,21 @@ public class Mylla {
 	// resets the game when finished
 	public void reset_game() {
 
-		setPlayer1Turn(true);
+		player.setPlayer1Turn(true);
 
 		setIsFinished(false);
 
 		gameboard.resetBoard();
 	}
-
-	public void setPlayer1Turn(boolean input) {
-		player1Turn = input;
-	}
-
+	
 	public void setIsFinished(boolean input) {
 		isFinished = input;
 	}
 
-	
 
 	public boolean getIsFinished() {
 		return isFinished;
 	}
-
-	public boolean getPlayer1Turn() {
-		return player1Turn;
-	}
-
 	
 
 	// Is it legal to tic box number x?
@@ -75,20 +65,27 @@ public class Mylla {
 	// Tic box number x
 	public void ticBox(int x) {
 		if (legalMove(x)) {
-			if (player1Turn) {
+			if (player.getPlayer1Turn()) {
 				gameboard.setCell(x, 1);
 			} else {
 				gameboard.setCell(x, 2);
 			}
-			player1Turn = !player1Turn;
+			player.setPlayer1Turn(!player.getPlayer1Turn());
 			countMoves++;
 		}
 	}
 
 	
-
 	public int getCountMoves() {
 		return countMoves;
+	}
+
+	public Player getPlayer(){
+		return player;
+	}
+
+	public Board getBoard(){
+		return gameboard;
 	}
 
 	public static void main(String[] args) {
@@ -108,20 +105,20 @@ public class Mylla {
 				} else {
 					mylla.ticBox(temp);
 					if (mylla.checkForWin()) {
-						if (!mylla.player1Turn) {
+						if (!mylla.player.getPlayer1Turn()) {
 							return 3;
 						} else {
 							return 4;
 						}
 					}
 					if (mylla.isFinished) {
-						if (!mylla.player1Turn) {
+						if (!mylla.player.getPlayer1Turn()) {
 							return 5;
 						} else {
 							return 6;
 						}
 					} else {
-						if (!mylla.player1Turn) {
+						if (!mylla.player.getPlayer1Turn()) {
 							return 1;
 						} else {
 							return 2;
