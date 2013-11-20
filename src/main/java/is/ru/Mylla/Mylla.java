@@ -135,7 +135,7 @@ public class Mylla {
 			public Object handle(Request request, Response response) {
 				int temp = Integer.valueOf(request.queryParams("ClickedBox"));
 				
-				return mylla.processTurn(temp);
+				return mylla.processTurn(temp) + " " + temp;
 			}
 		});
 	}

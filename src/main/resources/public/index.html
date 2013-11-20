@@ -53,7 +53,7 @@
 			type: "post",
 			url: "/processTurn",
 			data: 'ClickedBox=' + this.id
-		}).done(function(returnCode) {
+		}).done(function(returnString) {
 		/*
 		returnCode determines the result of the click
 		0: The move was illegal
@@ -65,13 +65,15 @@
 		6: Player 2 tics the box with O and the game is a draw
 		*/
 		//TODO: Add handling of the different return codes
+			var returnCode = parseInt(returnString.substring(0,1));
+			var clickedBox = parseInt(returnString.substring(2,3));
 			
+			alert(returnCode);
+			alert(clickedBox);
 			if(returnCode != 0)
 			{
 				//TODO: Edit the post function to also return the clickedBox value
 				var clickedBox = 0;
-				alert(clickedBox);
-				alert(this.id);
 				//Player 1 tics the box with X
 				if((returnCode % 2) == 1)
 				{
