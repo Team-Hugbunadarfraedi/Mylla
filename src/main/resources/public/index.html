@@ -47,6 +47,22 @@
     <!-- use ajax to tic the box -->
     <script>
 	$(document).ready(function() {
+		$.ajax({
+				type: "post",
+				url: "/resetGame"
+			}).done(function(returnValue){
+				for(var i = 0; i < 9; i++)
+				{
+					$('#' + i).text(" ");
+				}
+				
+				$("#Player").text("Player 1's turn");
+				$("#results").html("");
+			}).fail(function(){
+				$("#results").html("Something went very wrong").attr('class', 'alert alert-danger');
+			});
+		
+		
 		var box = $("table tr td");
 		box.click(function(e) {
 		$.ajax({
