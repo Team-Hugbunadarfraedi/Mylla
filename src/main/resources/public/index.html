@@ -81,9 +81,13 @@
 					$("#" + clickedBox).text("O");
 				}
 				
-				if((returnCode == 3) || (returnCode == 4))
+				if(returnCode == 3)
 				{
-					$("#results").html("Player " + (returnCode % 2) + " wins").attr('class', 'alert alert-success');
+					$("#results").html("Player 1 wins").attr('class', 'alert alert-success');
+				}
+				else if(returnCode == 4)
+				{
+					$("#results").html("Player 2 wins").attr('class', 'alert alert-success');
 				}
 				else if(returnCode > 4)
 				{
