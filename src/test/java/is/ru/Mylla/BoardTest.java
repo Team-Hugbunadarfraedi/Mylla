@@ -16,26 +16,9 @@ public class BoardTest{
 
 	@Test
 	public void testGetCellValueEmptyCell() {
-		Mylla m = new Mylla();
+		Board b = new Board();
 
-		assertEquals(0, m.getBoard().getCellValue(0));
-	}
-
-	@Test
-	public void testGetCellValuePlayerX() {
-		Mylla m = new Mylla();
-
-		m.ticBox(7);
-		assertEquals(1, m.getBoard().getCellValue(7));
-	}
-
-	@Test
-	public void testGetCellValuePlayerO() {
-		Mylla m = new Mylla();
-
-		m.ticBox(2);
-		m.ticBox(3);
-		assertEquals(2, m.getBoard().getCellValue(3));
+		assertEquals(0, b.getCellValue(0));
 	}
 			
 }
