@@ -9,7 +9,6 @@ public class Player {
 		 player1Turn = true; // Is it player 1's turn?
 	}
 
-	
 	public void setPlayer1Turn(boolean input) {
 		player1Turn = input;
 	}

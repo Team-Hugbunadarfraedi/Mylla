@@ -6,8 +6,7 @@ import org.junit.Test;
 public class MyllaTest {
 
 	@Test
-	public void reset_game() {
-
+	public void testReset_game() {
 		Mylla m = new Mylla();
 
 		m.reset_game();
@@ -16,6 +15,14 @@ public class MyllaTest {
 		assertEquals(0, m.getBoard().getBoardByIndex(0));
 		assertEquals(0, m.getBoard().getBoardByIndex(5));
 		assertEquals(0, m.getBoard().getBoardByIndex(8));
+	}
+	@Test
+	public void testResetBoard() {
+		Board b = new Board();
+
+		for (int i = 0; i < 9; i++){
+			assertEquals(0, b.getCellValue(i));
+		}
 	}
 
 	@Test
