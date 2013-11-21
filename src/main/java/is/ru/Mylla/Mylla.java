@@ -138,5 +138,15 @@ public class Mylla {
 				return mylla.processTurn(temp) + " " + temp;
 			}
 		});
+		
+		
+		post(new Route("/resetGame") {
+			@Override
+			public Object handle(Request request, Response response) {
+				mylla.resetGame();
+				
+				return 0;
+			}
+		});
 	}
 }

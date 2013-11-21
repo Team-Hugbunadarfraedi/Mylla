@@ -111,8 +111,17 @@
 		});
 		
 		//Resets the game
-		$("#ResetGame").click(function() {
+		$("#ResetGame").click(function(e) {
 			alert("The button has been clicked");
+			
+			$.ajax({
+				
+			}).done(function(){
+				
+			}).fail(function(){
+				
+			});
+			e.precentDefault();
 		});
 	});
     </script>
