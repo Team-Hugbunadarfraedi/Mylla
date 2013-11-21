@@ -31,6 +31,7 @@ public class Mylla {
 		player.setPlayer1Turn(true);
 
 		setIsFinished(false);
+		setCountMoves(0);
 
 		gameboard.resetBoard();
 	}
@@ -115,6 +116,10 @@ public class Mylla {
 		return countMoves;
 	}
 
+	public void setCountMoves(int val) {
+		countMoves = val;
+	}
+	
 	public Player getPlayer(){
 		return player;
 	}
