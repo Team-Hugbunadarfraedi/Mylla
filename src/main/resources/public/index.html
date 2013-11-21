@@ -115,11 +115,18 @@
 			alert("The button has been clicked");
 			
 			$.ajax({
+				type: "post",
+				url: "/resetGame"
+			}).done(function(returnValue){
+				for(var i = 0; i < 9; i++)
+				{
+					$('#' + i).text(" ");
+				}
 				
-			}).done(function(){
-				
+				$("#Player").text("Player 1's turn");
+				$("#results").html("");
 			}).fail(function(){
-				
+				$("#results").html("Something went very wrong").attr('class', 'alert alert-danger');
 			});
 			e.precentDefault();
 		});

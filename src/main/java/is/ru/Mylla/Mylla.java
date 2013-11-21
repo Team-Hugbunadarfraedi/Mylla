@@ -143,7 +143,7 @@ public class Mylla {
 		post(new Route("/resetGame") {
 			@Override
 			public Object handle(Request request, Response response) {
-				mylla.resetGame();
+				mylla.reset_game();
 				
 				return 0;
 			}
