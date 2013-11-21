@@ -18,19 +18,19 @@
 		
 		<table>
 		<tr>
-			<td class="Tic" name="box0" id="0">0</td>
-			<td class="Tic" name="box1" id="1">1</td>
-			<td class="Tic" name="box2" id="2">2</td>
+			<td class="Tic" name="box0" id="0">&nbsp;</td>
+			<td class="Tic" name="box1" id="1">&nbsp;</td>
+			<td class="Tic" name="box2" id="2">&nbsp;</td>
 		</tr>
 		<tr>
-			<td class="Tic" name="box3" id="3">3</td>
-			<td class="Tic" name="box4" id="4">4</td>
-			<td class="Tic" name="box5" id="5">5</td>
+			<td class="Tic" name="box3" id="3">&nbsp;</td>
+			<td class="Tic" name="box4" id="4">&nbsp;</td>
+			<td class="Tic" name="box5" id="5">&nbsp;</td>
 		</tr>
 		<tr>
-			<td class="Tic" name="box6" id="6">6</td>
-			<td class="Tic" name="box7" id="7">7</td>
-			<td class="Tic" name="box8" id="8">8</td>
+			<td class="Tic" name="box6" id="6">&nbsp;</td>
+			<td class="Tic" name="box7" id="7">&nbsp;</td>
+			<td class="Tic" name="box8" id="8">&nbsp;</td>
 		</tr>
 		</table>
 		
@@ -65,15 +65,11 @@
 		6: Player 2 tics the box with O and the game is a draw
 		*/
 		//TODO: Add handling of the different return codes
-			var returnCode = parseInt(returnString.substring(0,1));
-			var clickedBox = parseInt(returnString.substring(2,3));
+			var returnCode = returnString.substring(0,1);
+			var clickedBox = returnString.substring(2,3);
 			
-			alert(returnCode);
-			alert(clickedBox);
 			if(returnCode != 0)
 			{
-				//TODO: Edit the post function to also return the clickedBox value
-				var clickedBox = 0;
 				//Player 1 tics the box with X
 				if((returnCode % 2) == 1)
 				{
@@ -108,9 +104,6 @@
 			}
 			
 			
-			
-			//For debugging purposes
-			$('#results').html("returnCode = " + returnCode).attr('class', 'alert alert-success');
 		}).fail(function() {
 			$('#results').html('Something went very wrong').attr('class', 'alert alert-danger');
 		});
