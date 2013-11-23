@@ -24,6 +24,7 @@ public class SeleniumTestPlayerWinIT {
 	@Test
 	public void testPlayerWinIT() throws Exception {
 		selenium.open("/index.html");
+		selenium.waitForPageToLoad("10000");
 		assertEquals("", selenium.getText("id=0"));
 		assertEquals("", selenium.getText("id=1"));
 		assertEquals("", selenium.getText("id=2"));
@@ -37,13 +38,15 @@ public class SeleniumTestPlayerWinIT {
 		selenium.click("id=0");
 		selenium.click("id=1");
 		selenium.click("id=2");
+		selenium.waitForPageToLoad("10000");
 		assertEquals("X", selenium.getText("id=0"));
 		assertEquals("O", selenium.getText("id=1"));
 		assertEquals("X", selenium.getText("id=2"));
-		selenium.selectWindow("null");
+//		selenium.selectWindow("null");
 		selenium.click("id=4");
 		selenium.click("id=3");
 		selenium.click("id=7");
+		selenium.waitForPageToLoad("10000");
 		assertEquals("Player 2 wins", selenium.getText("id=results"));
 		assertEquals("X", selenium.getText("id=0"));
 		assertEquals("O", selenium.getText("id=1"));
@@ -56,6 +59,7 @@ public class SeleniumTestPlayerWinIT {
 		assertEquals("", selenium.getText("id=8"));
 		assertEquals("Player 1's turn", selenium.getText("id=Player"));
 		selenium.click("id=5");
+		selenium.waitForPageToLoad("10000");
 		assertEquals("Player 2 wins", selenium.getText("id=results"));
 		assertEquals("Player 1's turn", selenium.getText("id=Player"));
 		assertEquals("Player 1's turn", selenium.getText("id=Player"));

@@ -24,6 +24,7 @@ public class SeleniumTestResetGameIT {
 	@Test
 	public void testResetGameIT() throws Exception {
 		selenium.open("/index.html");
+		selenium.waitForPageToLoad("10000");
 		selenium.click("id=4");
 		selenium.click("id=2");
 		selenium.click("id=8");
@@ -33,9 +34,11 @@ public class SeleniumTestResetGameIT {
 		selenium.click("id=3");
 		selenium.click("id=5");
 		selenium.click("id=6");
+		selenium.waitForPageToLoad("30000");
 		assertEquals("The game is a draw", selenium.getText("id=results"));
 		assertEquals("Player 2's turn", selenium.getText("id=Player"));
 		selenium.click("id=ResetGame");
+		selenium.waitForPageToLoad("10000");
 		assertEquals("", selenium.getText("id=0"));
 		assertEquals("", selenium.getText("id=1"));
 		assertEquals("", selenium.getText("id=2"));

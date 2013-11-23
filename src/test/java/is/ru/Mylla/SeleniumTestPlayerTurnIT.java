@@ -24,16 +24,22 @@ public class SeleniumTestPlayerTurnIT {
 	@Test
 	public void testPlayerTurnIT() throws Exception {
 		selenium.open("/index.html");
+		selenium.waitForPageToLoad("10000");
 		assertEquals("Player 1's turn", selenium.getText("id=Player"));
 		selenium.click("id=0");
+		selenium.waitForPageToLoad("10000");
 		assertEquals("Player 2's turn", selenium.getText("id=Player"));
 		selenium.click("id=4");
+		selenium.waitForPageToLoad("10000");
 		assertEquals("Player 1's turn", selenium.getText("id=Player"));
 		selenium.click("id=1");
+		selenium.waitForPageToLoad("10000");
 		assertEquals("Player 2's turn", selenium.getText("id=Player"));
 		selenium.click("id=ResetGame");
+		selenium.waitForPageToLoad("10000");
 		assertEquals("Player 1's turn", selenium.getText("id=Player"));
 		selenium.click("id=ResetGame");
+		selenium.waitForPageToLoad("10000");
 		assertEquals("Player 1's turn", selenium.getText("id=Player"));
 		selenium.click("id=ResetGame");
 	}
