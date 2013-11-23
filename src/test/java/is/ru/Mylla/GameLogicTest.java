@@ -138,7 +138,7 @@ public class GameLogicTest {
 	}
 	
 	@Test
-	public void testProcessTurnIllegal(){
+	public void testProcessTurnIllegal() {
 		GameLogic g = new GameLogic();
 		
 		assertEquals(0, g.processTurn(-1));
@@ -154,7 +154,7 @@ public class GameLogicTest {
 	}
 	
 	@Test
-	public void testProcessTurn1Win(){
+	public void testProcessTurn1Win() {
 		GameLogic g = new GameLogic();
 		
 		assertEquals(1, g.processTurn(0));
@@ -169,7 +169,7 @@ public class GameLogicTest {
 	}
 	
 	@Test
-	public void testProcessTurn2Win(){
+	public void testProcessTurn2Win() {
 		GameLogic g = new GameLogic();
 		
 		assertEquals(1, g.processTurn(0));
@@ -185,8 +185,7 @@ public class GameLogicTest {
 	}
 	
 	@Test
-	public void testProcessTurnDraw()
-	{
+	public void testProcessTurnDraw() {
 		GameLogic g = new GameLogic();
 	
 		assertEquals(1, g.processTurn(4));
