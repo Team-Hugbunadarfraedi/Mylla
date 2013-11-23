@@ -17,7 +17,7 @@ public class SeleniumTestResetGameIT {
 	@Before
 	public void setUp() throws Exception {
 		WebDriver driver = new FirefoxDriver();
-		String baseUrl = "http://localhost:4567/";
+		String baseUrl = System.getenv("STAGING_SERVER");
 		selenium = new WebDriverBackedSelenium(driver, baseUrl);
 	}
 
