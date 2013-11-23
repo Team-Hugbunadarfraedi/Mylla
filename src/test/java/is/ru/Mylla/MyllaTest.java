@@ -8,7 +8,7 @@ public class MyllaTest {
 	@Test
 	public void reset_game() {
 
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 
 		m.reset_game();
 		assertEquals(false, m.getIsFinished());
@@ -20,7 +20,7 @@ public class MyllaTest {
 
 	@Test
 	public void testCheckForWin() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 
 		m.ticBox(0);
 		m.ticBox(1);
@@ -42,7 +42,7 @@ public class MyllaTest {
 
 	@Test
 	public void testLegalMoveIllegal() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 
 		// Illegal inputs
 		assertEquals(false, m.legalMove(-1));
@@ -51,7 +51,7 @@ public class MyllaTest {
 
 	@Test
 	public void testLegalMoveEmpty() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 
 		// Tests an empty board
 		assertEquals(true, m.legalMove(0));
@@ -60,7 +60,7 @@ public class MyllaTest {
 
 	@Test
 	public void testLegalMoveNotEmpty() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 
 		m.ticBox(0);
 		assertEquals(false, m.legalMove(0));
@@ -75,14 +75,14 @@ public class MyllaTest {
 
 	@Test
 	public void testGetCellValueEmptyCell() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 
 		assertEquals(0, m.getBoard().getCellValue(0));
 	}
 
 	@Test
 	public void testGetCellValuePlayerX() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 
 		m.ticBox(7);
 		assertEquals(1, m.getBoard().getCellValue(7));
@@ -90,7 +90,7 @@ public class MyllaTest {
 
 	@Test
 	public void testGetCellValuePlayerO() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 
 		m.ticBox(2);
 		m.ticBox(3);
@@ -99,7 +99,7 @@ public class MyllaTest {
 
 	@Test
 	public void testTicBoxSingleTic() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 
 		m.ticBox(3);
 		assertEquals(1, m.getBoard().getCellValue(3));
@@ -107,7 +107,7 @@ public class MyllaTest {
 
 	@Test
 	public void testTicBoxTwoTics() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 
 		m.ticBox(4);
 		m.ticBox(5);
@@ -118,7 +118,7 @@ public class MyllaTest {
 
 	@Test
 	public void testTicBoxThreeTics() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 
 		m.ticBox(0);
 		m.ticBox(1);
@@ -130,7 +130,7 @@ public class MyllaTest {
 
 	@Test
 	public void testCounter() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 
 		for (int i = 0; i < 10; i++) {
 			m.ticBox(i);
@@ -140,7 +140,7 @@ public class MyllaTest {
 	
 	@Test
 	public void testProcessTurnIllegal() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 		
 		assertEquals(0, m.processTurn(-1));
 		assertEquals(0, m.processTurn(9));
@@ -156,7 +156,7 @@ public class MyllaTest {
 	
 	@Test
 	public void testProcessTurn1Win() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 		
 		assertEquals(1, m.processTurn(0));
 		assertEquals(2, m.processTurn(1));
@@ -171,7 +171,7 @@ public class MyllaTest {
 	
 	@Test
 	public void testProcessTurn2Win() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 		
 		assertEquals(1, m.processTurn(0));
 		assertEquals(2, m.processTurn(2));
@@ -187,7 +187,7 @@ public class MyllaTest {
 	
 	@Test
 	public void testProcessTurnDraw() {
-		Mylla m = new Mylla();
+		GameLogic m = new GameLogic();
 	
 		assertEquals(1, m.processTurn(4));
 		assertEquals(2, m.processTurn(1));
