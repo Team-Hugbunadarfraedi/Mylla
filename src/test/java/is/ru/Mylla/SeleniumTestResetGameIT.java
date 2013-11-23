@@ -34,7 +34,7 @@ public class SeleniumTestResetGameIT {
 		selenium.click("id=3");
 		selenium.click("id=5");
 		selenium.click("id=6");
-		selenium.waitForPageToLoad("30000");
+		selenium.waitForPageToLoad("40000");
 		assertEquals("The game is a draw", selenium.getText("id=results"));
 		assertEquals("Player 2's turn", selenium.getText("id=Player"));
 		selenium.click("id=ResetGame");
