@@ -3,7 +3,7 @@ package is.ru.Mylla;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class BoardTest{
+public class BoardTest {
 
 	@Test
 	public void testResetBoard() {
@@ -19,6 +19,5 @@ public class BoardTest{
 		Board b = new Board();
 
 		assertEquals(0, b.getCellValue(0));
-	}
-			
+	}			
 }

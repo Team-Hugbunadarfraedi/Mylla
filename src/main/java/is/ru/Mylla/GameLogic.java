@@ -1,8 +1,8 @@
 package is.ru.Mylla;
 
-public class GameLogic{
+public class GameLogic {
 
-private Board gameboard = new Board();
+	private Board gameboard = new Board();
 	private Player player = new Player();
 	private boolean isFinished = false; // Is the game finished?
 	private int countMoves = 0;
@@ -70,16 +70,15 @@ private Board gameboard = new Board();
 			}
 			player.setPlayer1Turn(!player.getPlayer1Turn());
 			countMoves++;
-			if(getCountMoves() > 8){
+			if(getCountMoves() > 8) {
 				setIsFinished(true);
 			}
 		}
 	}
 	
-	
 	//Returns a returnCode for the javascript
 	//and performs the necessary actions for the turn
-	public int processTurn(int clickedBox){
+	public int processTurn(int clickedBox) {
 		if (!legalMove(clickedBox)) {
 					return 0;
 				} else {
@@ -108,7 +107,6 @@ private Board gameboard = new Board();
 				}
 	}
 
-	
 	public int getCountMoves() {
 		return countMoves;
 	}
@@ -117,11 +115,11 @@ private Board gameboard = new Board();
 		countMoves = val;
 	}
 	
-	public Player getPlayer(){
+	public Player getPlayer() {
 		return player;
 	}
 
-	public Board getBoard(){
+	public Board getBoard() {
 		return gameboard;
 	}
 

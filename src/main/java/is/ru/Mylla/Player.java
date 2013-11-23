@@ -4,8 +4,7 @@ public class Player {
 
 	private boolean player1Turn;
 
-	public Player(){
-
+	public Player() {
 		 player1Turn = true; // Is it player 1's turn?
 	}
 

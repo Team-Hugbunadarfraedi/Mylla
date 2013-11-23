@@ -1,6 +1,3 @@
-@echo off
-rem ***********************************************************************
-rem This bat file runs Selenium tests (uses failsafe plugin).
-rem ***********************************************************************
+#!bin/bash
 
 call mvn test-compile failsafe:integration-test
